@@ -134,13 +134,15 @@ body {
 .carousel-title {
     font-size: 1.5rem;
     margin-bottom: 20px;
-    padding-left: 0%; /* 🔹 Asegura que el título también esté alineado */
+    padding-left: 5%; /* 🔹 Asegura que el título también esté alineado */
 }
 
 .carousel-container {
     position: relative;
     overflow: hidden;
     width: 100%;
+    padding-left: 5%;  /* 🔹 Alinea con el margen del título */
+    padding-right: 5%; /* 🔹 Mantiene el mismo margen en ambos lados */
 }
 
 /* Carrusel ajustado */
@@ -198,16 +200,26 @@ body {
 
 /* RESPONSIVE CARRUSEL */
 @media (max-width: 768px) {
-    .carousel {
-        padding: 2rem 5%; /* 🔹 Mantiene la alineación en móviles */
+    .hero {
+        height: 70vh;
+        padding: 2rem 5%;
+        display: flex;
+        align-items: flex-end; /* Baja el contenido */
+    }
+
+    .hero-content {
+        max-width: 100%;
+        margin-bottom: 6rem; /* 🔹 Baja más el contenido en móviles */
     }
 
     .carousel-title {
-        padding-left: 5%;
+        padding-left: 5%; /* 🔹 Asegura que el título del carrusel esté alineado */
     }
 
-    .carousel-item {
-        width: 140px;
-        height: 210px;
+    .carousel-container {
+        padding-left: 5%;
+        padding-right: 5%;
     }
 }
+
+
