@@ -28,7 +28,7 @@ body {
     justify-content: flex-start;
     padding: 3rem 5%;
     overflow: hidden;
-    margin-bottom: 2rem; /* 🔹 Espacio entre la hero y el carrusel */
+    margin-bottom: 0rem; /* 🔹 Espacio entre la hero y el carrusel */
 }
 
 /* Imagen de fondo */
@@ -72,7 +72,7 @@ body {
 .hero-description {
     font-size: clamp(1.2rem, 3vw, 1.5rem);
     line-height: 1.6;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 /* Botones */
@@ -101,15 +101,19 @@ body {
 @media (max-width: 768px) {
     .hero {
         height: 70vh;
-        padding: 2rem 5%;
+        padding: -0rem 5%;
         display: flex;
-        align-items: flex-end; /* Baja el contenido */
+        align-items: flex-end; /* 🔹 Baja el contenido */
+        justify-content: left; /* 🔹 Centra mejor en pantallas pequeñas */
+        margin-bottom: -0.90rem; /* 🔹 Más espacio debajo de la hero */
     }
 
     .hero-content {
         max-width: 100%;
-        margin-bottom: 5rem; /* Agrega un margen abajo para bajarlo aún más */
+        margin-bottom: 2rem; /* 🔹 Baja aún más el contenido */
+        text-align: left; /* 🔹 Centra el texto en pantallas pequeñas */
     }
+}
 
     .hero-title {
         font-size: clamp(2rem, 6vw, 3rem); /* Más visible */
@@ -129,7 +133,7 @@ body {
 
 .carousel-title {
     font-size: 1.5rem;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     padding-left: 0%; /* 🔹 Asegura que el título también esté alineado */
 }
 
@@ -207,5 +211,3 @@ body {
         height: 210px;
     }
 }
-
-
