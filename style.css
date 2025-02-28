@@ -202,14 +202,14 @@ body {
 @media (max-width: 768px) {
     .hero {
         height: 70vh;
-        padding: 2rem 5%;
+        padding: 0rem 5%;
         display: flex;
         align-items: flex-end; /* Baja el contenido */
     }
 
     .hero-content {
         max-width: 100%;
-        margin-bottom: 6rem; /* 🔹 Baja más el contenido en móviles */
+        margin-bottom: 3rem; /* 🔹 Baja más el contenido en móviles */
     }
 
     .carousel-title {
