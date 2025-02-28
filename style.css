@@ -1,7 +1,7 @@
 /* Variables de colores */
 :root {
     --rojo: #E50914;
-    --fondo: #141414;
+    --fondo: #000000;
 }
 
 /* Reset de estilos */
@@ -28,6 +28,7 @@ body {
     justify-content: flex-start;
     padding: 3rem 5%;
     overflow: hidden;
+    margin-bottom: 2rem; /* 🔹 Espacio entre la hero y el carrusel */
 }
 
 /* Imagen de fondo */
@@ -40,6 +41,19 @@ body {
     object-fit: cover;
     filter: brightness(50%);
     z-index: -1;
+}
+
+/* 🔹 Degradado negro que se funde con el fondo */
+.hero::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.6) 60%, rgba(0, 0, 0, 1) 100%);
+    z-index: -1;
+    pointer-events: none;
 }
 
 /* Contenido de la Hero */
@@ -71,7 +85,7 @@ body {
     background-color: rgba(255, 255, 255, 0.2);
     color: white;
     border: none;
-    padding: 12px 20px;
+    padding: 10px 20px;
     font-size: clamp(1rem, 2vw, 1.3rem);
     cursor: pointer;
     border-radius: 5px;
