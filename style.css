@@ -1,0 +1,367 @@
+/* Variables de colores */
+:root {
+    --rojo: #E50914;
+    --fondo: #141414;
+}
+
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo general del body */
+body {
+    background: var(--fondo);
+    font-family: 'Arial', sans-serif;
+    color: white;
+}
+
+/* ------------------- HERO IMAGE ------------------- */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 80vh; /* Mantiene buena altura */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Alineado a la izquierda */
+    text-align: left;
+    padding: 3rem 5%; /* Margen en los lados */
+    overflow: hidden;
+}
+
+/* Imagen de fondo */
+.hero-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(50%);
+    z-index: -1;
+}
+
+/* Contenido de la Hero alineado a la izquierda */
+.hero-content {
+    max-width: 50%;
+}
+
+/* Título y descripción con tamaños más controlados */
+.hero-title {
+    font-size: clamp(2rem, 4vw, 3rem); /* Tamaño más balanceado */
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.hero-description {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+/* Botones */
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: clamp(0.9rem, 2vw, 1.2rem); /* Botones más controlados */
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: white;
+    color: black;
+}
+
+.carousel {
+    margin-top: 2rem;
+    padding: 0 5%;
+}
+
+.carousel-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* Suaviza scroll en móvil */
+}
+
+/* Ocultar scrollbar */
+.carousel-track::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-item {
+    width: 200px; /* Tamaño de las portadas */
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.carousel-item:hover {
+    transform: scale(1.1); /* Efecto de zoom */
+}
+
+/* Flechas */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 10;
+    transition: 0.3s;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.left-btn {
+    left: 0;
+}
+
+.right-btn {
+    right: 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .carousel-item {
+        width: 150px; /* Más pequeño en móvil */
+    }
+
+    .carousel-btn {
+        font-size: 1.2rem;
+        padding: 8px;
+    }
+}
+body {
+    background-color: black !important;
+}
+.carousel-container {
+    display: flex;
+    align-items: center;
+    overflow-x: auto; /* Permite el desplazamiento horizontal */
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 10px;
+}
+
+.carousel-item {
+    width: 200px; /* Ajusta el tamaño según necesites */
+    height: 300px;
+    object-fit: cover;
+    scroll-snap-align: start;
+}
+
+
+/* ------------------- RESPONSIVE ------------------- */
+@media (max-width: 768px) {
+    .hero {
+        position: relative;
+        width: 100%;
+        height: 80vh; /* Ajusta la altura según necesites */
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0 8%;
+    }
+    
+    /* 🔹 Imagen de fondo con `<img>` */
+    .hero-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Evita que se deforme */
+        z-index: -1;
+        filter: brightness(0.6); /* Oscurece un poco la imagen */
+    }
+
+    
+    
+    /* 🔹 Contenedor de texto */
+    .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 50%;
+        color: white;
+    }
+    
+    /* ----------- RESPONSIVE (Móviles) ----------- */
+    @media (max-width: 768px) {
+        .hero {
+            height: 70vh; /* Un poco más pequeña en móvil */
+            padding: 2rem 5%;
+        }
+    
+        .hero-content {
+            max-width: 100%; /* Usa todo el ancho en móviles */
+        }
+    
+        .hero-title {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+        }
+    
+        .hero-description {
+            font-size: clamp(1rem, 4vw, 1.2rem);
+        }
+    
+        .hero-img {
+            filter: brightness(0.5); /* Un poco más oscuro en móviles */
+        }
+    }
+    
+    /* ----------- BOTONES ----------- */
+.hero-buttons {
+    display: flex;
+    gap: 8px; /* 🔹 Espacio más reducido entre botones */
+}
+
+.btn {
+    background-color: rgba(255, 255, 255, 0.15); /* 🔹 Más translúcido para un look elegante */
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* 🔹 Borde sutil */
+    padding: 6px 10px; /* 🔹 Botón más pequeño */
+    font-size: 0.8rem; /* 🔹 Fuente más reducida */
+    cursor: pointer;
+    border-radius: 3px; /* 🔹 Bordes más sutiles */
+    transition: 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/*  Íconos también más pequeños */
+.btn i {
+    font-size: 0.9rem;
+}
+
+/*  Hover con efecto más sutil */
+.btn:hover {
+    background-color: white;
+    color: black;
+    border-color: white;
+}
+
+/* ----------- RESPONSIVE (Móviles) ----------- */
+@media (max-width: 768px) {
+    .hero-buttons {
+        gap: 6px; /* 🔹 Aún más compacto en móviles */
+    }
+
+    .btn {
+        font-size: 0.75rem; /*  Fuente aún más reducida en móviles */
+        padding: 5px 8px; /*  Botón más compacto */
+        border-radius: 2px; /*  Bordes sutiles */
+    }
+
+    .btn i {
+        font-size: 0.8rem; /*  Íconos más pequeños */
+    }
+}
+.hero {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 8%;
+}
+
+/* 🔹 Imagen de fondo */
+.hero img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* 🔹 Degradado Mejorado */
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 25%; /* Ajustamos la posición del degradado */
+    left: 0;
+    width: 100%;
+    height: 75%; /* Cubrimos más área */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 1) 100%);
+    z-index: -1;
+    pointer-events: none; /* Evita que interfiera con los botones */
+} 
+
+/* 🔹 Ajuste para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    .hero {
+        height: 75vh;
+        padding: 0 5%;
+    }
+
+    .hero::after {
+        top: 15%; /* Se ajusta para que se vea mejor en móviles */
+        height: 85%; /* Se extiende más para fusionarse con el fondo */
+    }
+}
+@media (max-width: 768px) {
+    .hero {
+        min-height: 70vh; /* 🔹 Reduce la altura en móviles */
+        justify-content: flex-start; /* 🔹 Alineado a la izquierda */
+        text-align: left;
+        padding: 2rem 5%; /* 🔹 Mantiene margen */
+    }
+
+    .hero-content {
+        max-width: 90%; /* 🔹 Usa más espacio sin ser enorme */
+    }
+
+    .hero-title {
+        font-size: clamp(1.5rem, 4.5vw, 2rem); /* 🔹 Título más pequeño */
+    }
+
+    .hero-description {
+        font-size: clamp(0.9rem, 3.5vw, 1rem); /* 🔹 Descripción más pequeña */
+        max-width: 80%; /* 🔹 Hace que la descripción sea más larga */
+    }
+}
+@media (max-width: 768px) {
+    .hero-content {
+        transform: translateY(30%); /* Baja el contenido un 30% */
+    }
+}
+/* ------------------- CARRUSEL ------------------- */
