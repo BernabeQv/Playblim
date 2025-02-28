@@ -86,12 +86,18 @@ body {
 /* RESPONSIVE HERO */
 @media (max-width: 768px) {
     .hero {
-        height: 70vh; /* Ajustado para móviles */
+        height: 70vh;
         padding: 2rem 5%;
+        display: flex;
+        align-items: flex-end; /* Baja el contenido */
     }
 
     .hero-content {
-        max-width: 100%; /* Ocupa más espacio en móviles */
+        max-width: 100%;
+        margin-bottom: 5rem; /* Agrega un margen abajo para bajarlo aún más */
+    }
+}
+
     }
 
     .hero-title {
@@ -134,9 +140,11 @@ body {
 }
 
 .carousel-item {
-    width: 200px;
+    width: 180px; /* Aumentamos el ancho */
+    height: 270px; /* Hacemos la imagen más larga */
     border-radius: 8px;
     transition: transform 0.3s ease-in-out;
+    object-fit: cover; /* Ajusta la imagen correctamente */
 }
 
 .carousel-item:hover {
@@ -173,11 +181,8 @@ body {
 /* RESPONSIVE CARRUSEL */
 @media (max-width: 768px) {
     .carousel-item {
-        width: 150px;
-    }
-
-    .carousel-btn {
-        font-size: 1.2rem;
-        padding: 8px;
+        width: 140px;
+        height: 210px;
     }
 }
+
